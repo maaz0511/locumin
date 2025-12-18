@@ -7,6 +7,8 @@ import cloudinary
 from cloudinary.uploader import upload
 from datetime import datetime as dt
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 def create_app():
     app = Flask(__name__)
@@ -358,6 +360,8 @@ def create_app():
 
     return app
 
+
+app = create_app()
+
 if __name__ == '__main__':
-    app = create_app()
-    app.run(debug=True, port=5000)
+    app.run()
